@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script defer src="/js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+<header>
+    <h1>Dashboard</h1>
+</header>
+
+<main>
+
+    <div class="charts">
+        <div class="chart-container">
+            <h2>OEE Rate Distribution</h2>
+            <canvas id="oeeChart"></canvas>
+        </div>
+        <div class="small-chart-container">
+            <h2>Performance Rate Distribution</h2>
+            <canvas id="performanceChart"></canvas>
+        </div>
+        <div class="small-chart-container">
+            <h2>Quality Rate Distribution</h2>
+            <canvas id="qualityChart"></canvas>
+        </div>
+        <div class="small-chart-container">
+            <h2>Availability Rate Distribution</h2>
+            <canvas id="availabilityChart"></canvas>
+        </div>
+        <div class="chart-container2">
+            <h2>Stop Reasons Distributions</h2>
+            <canvas id="stopReasonsChart"></canvas>
+        </div>
+        <div class="chart-container2">
+            <h2>Stop Reasons Distribution HAT 1</h2>
+            <canvas id="stopReasonsChartHat1"></canvas>
+        </div>
+        <div class="chart-container2">
+            <h2>Stop Reasons Distribution HAT 2</h2>
+            <canvas id="stopReasonsChartHat2"></canvas>
+        </div>
+    </div>
+    <div class="charts">
+        <div class="chart-container3">
+            <h2>Monthly Production Comparison</h2>
+            <canvas id="productionComparisonChart"></canvas>
+        </div>
+    </div>
+
+    <section class="tables">
+        <h2>Monitor OEE</h2>
+        <table border="1">
+            <thead>
+            <tr>
+                <th>Line Code</th>
+                <th>Line Explanation</th>
+                <th>OEE Rate</th>
+                <th>Performance Rate</th>
+                <th>Quality Rate</th>
+                <th>Availability Rate</th>
+            </tr>
+            </thead>
+            <tr th:each="oee : ${oeeList}">
+                <td th:text="${oee.lineCode}">Line Code</td>
+                <td th:text="${oee.lineExplanation}">Line Explanation</td>
+                <td th:text="${oee.oeeRate}">OEE Rate</td>
+                <td th:text="${oee.performanceRate}">Performance Rate</td>
+                <td th:text="${oee.qualityRate}">Quality Rate</td>
+                <td th:text="${oee.availabilityRate}">Availability Rate</td>
+            </tr>
+        </table>
+
+        <h2>Monitor Production</h2>
+        <table border="1">
+            <tr>
+                <th>Line Code</th>
+                <th>Prod Date</th>
+                <th>Prod Quantity</th>
+            </tr>
+            <tr th:each="production : ${productionList}">
+                <td th:text="${production.lineCode}">Line Code</td>
+                <td th:text="${#dates.format(production.prodDate, 'dd-MM-yyyy')}">Prod Date</td>
+                <td th:text="${production.prodQuantity}">Prod Quantity</td>
+            </tr>
+        </table>
+
+        <h2>Monitor Stoppage</h2>
+        <table border="1">
+            <tr>
+                <th>Line Code</th>
+                <th>Stop Reason</th>
+                <th>Stop Duration</th>
+            </tr>
+            <tr th:each="stoppage : ${stoppageList}">
+                <td th:text="${stoppage.lineCode}">Line Code</td>
+                <td th:text="${stoppage.stopReason}">Stop Reason</td>
+                <td th:text="${stoppage.stopDuration}">Stop Duration</td>
+            </tr>
+        </table>
+    </section>
+</main>
+
+<!-- Verileri JavaScript'e aktar -->
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    var oeeData = [[${oeeList}]];
+    var stoppageData = [[${stoppageList}]];
+    var productionData = [[${productionData}]];
+    /*]]>*/
+</script>
+</body>
+</html>
