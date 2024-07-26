@@ -134,4 +134,57 @@ var productionComparisonChart = new Chart(ctxProductionComparison, {
         }
     }
 });
+    // Gauge Chart
+    var svg = d3.select('#gaugeChart'),
+        width = +svg.attr('width'),
+        height = +svg.attr('height'),
+        radius = Math.min(width, height) / 2;
+
+    var arc = d3.arc()
+        .innerRadius(radius - 20)
+        .outerRadius(radius - 10)
+        .startAngle(-Math.PI / 2)
+        .endAngle(Math.PI / 2);
+
+    var background = svg.append('g')
+        .attr('transform', `translate(${width / 2},${height / 2})`);
+
+    background.append('path')
+        .datum({ endAngle: Math.PI })
+        .style('fill', '#ddd')
+        .attr('d', arc);
+
+    var foreground = svg.append('g')
+        .attr('transform', `translate(${width / 2},${height / 2})`);
+
+    var valueArc = d3.arc()
+        .innerRadius(radius - 20)
+        .outerRadius(radius - 10)
+        .startAngle(-Math.PI / 2);
+
+    foreground.append('path')
+        .datum({ endAngle: -Math.PI / 2 })
+        .style('fill', '#ff6384')
+        .attr('d', valueArc);
+
+    // Set gauge value (example: 0.75 for 75%)
+    var value = 0.75;
+    foreground.select('path')
+        .transition()
+        .duration(1000)
+        .attr('d', d3.arc()
+            .innerRadius(radius - 20)
+            .outerRadius(radius - 10)
+            .startAngle(-Math.PI / 2)
+            .endAngle(-Math.PI / 2 + (Math.PI * 2 * value))
+        );
+
+    // Add text label to display the percentage value
+    svg.append('text')
+        .attr('x', width / 2)
+        .attr('y', height / 2)
+        .attr('text-anchor', 'middle')
+        .attr('font-size', '24px')
+        .attr('fill', '#333')
+        .text((value * 100).toFixed(0) + '%');
 
