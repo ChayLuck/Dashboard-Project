@@ -8,8 +8,28 @@ document.addEventListener('DOMContentLoaded', function () {
             datasets: [{
                 label: '',
                 data: oeeData.map(item => item.oeeRate * 100),
-                backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0']
+                backgroundColor: ['#377195', '#36a2eb', '#ffce56', '#4bc0c0'],
+                borderColor: 'transparent', // Set to 'transparent' to remove borders
+                borderWidth: 0 // Set to 0 to remove borders
             }]
+        },
+        options: {
+            cutout: '0%', // Remove or set to desired cutout size
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#ffffff' // Text color for legend labels
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        labelTextColor: function() {
+                            return '#ffffff'; // Text color for tooltip labels
+                        }
+                    }
+                }
+            },
+            responsive: true
         }
     });
 
@@ -22,8 +42,28 @@ document.addEventListener('DOMContentLoaded', function () {
             datasets: [{
                 label: '',
                 data: stoppageData.map(item => item.stopDuration),
-                backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff', '#ff9f40', '#ffcd56', '#4bc0c0', '#36a2eb', '#ff6384']
+                backgroundColor: ['#092b4a', '#2c6faf', '#033a6e', '#1e597c', '#55a4ef', '#2b74b8', '#1a3b5a', '#7fb7ed', '#36a2eb', '#ff6384'],
+                borderColor: 'transparent', // Set to 'transparent' to remove borders
+                borderWidth: 0 // Set to 0 to remove borders
             }]
+        },
+        options: {
+            cutout: '0%', // Remove or set to desired cutout size
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#ffffff' // Text color for legend labels
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        labelTextColor: function() {
+                            return '#ffffff'; // Text color for tooltip labels
+                        }
+                    }
+                }
+            },
+            responsive: true
         }
     });
 
@@ -37,9 +77,30 @@ document.addEventListener('DOMContentLoaded', function () {
             datasets: [{
                 label: '',
                 data: stoppageDataHat1.map(item => item.stopDuration),
-                backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0']
+                backgroundColor: ['#2c6faf', '#033a6e', '#1e597c', '#55a4ef'],
+                borderColor: 'transparent', // Set to 'transparent' to remove borders
+                borderWidth: 0 // Set to 0 to remove borders
             }]
+        },
+        options: {
+            cutout: '0%', // Remove or set to desired cutout size
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#ffffff' // Text color for legend labels
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        labelTextColor: function() {
+                            return '#ffffff'; // Text color for tooltip labels
+                        }
+                    }
+                }
+            },
+            responsive: true
         }
+
     });
 
     // Stop Reasons Distribution Chart for Hat 2
@@ -52,8 +113,28 @@ document.addEventListener('DOMContentLoaded', function () {
             datasets: [{
                 label: '',
                 data: stoppageDataHat2.map(item => item.stopDuration),
-                backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0']
+                backgroundColor: ['#2c6faf', '#033a6e', '#1e597c', '#55a4ef'],
+                borderColor: 'transparent', // Set to 'transparent' to remove borders
+                borderWidth: 0 // Set to 0 to remove borders
             }]
+        },
+        options: {
+            cutout: '0%', // Remove or set to desired cutout size
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#ffffff' // Text color for legend labels
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        labelTextColor: function() {
+                            return '#ffffff'; // Text color for tooltip labels
+                        }
+                    }
+                }
+            },
+            responsive: true
         }
     });
 
@@ -66,8 +147,28 @@ document.addEventListener('DOMContentLoaded', function () {
             datasets: [{
                 label: '',
                 data: oeeData.map(item => item.performanceRate * 100),
-                backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0']
+                backgroundColor: ['#377195', '#36a2eb', '#ffce56', '#4bc0c0'],
+                borderColor: 'transparent', // Set to 'transparent' to remove borders
+                borderWidth: 0 // Set to 0 to remove borders
             }]
+        },
+        options: {
+            cutout: '0%', // Remove or set to desired cutout size
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#ffffff' // Text color for legend labels
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        labelTextColor: function() {
+                            return '#ffffff'; // Text color for tooltip labels
+                        }
+                    }
+                }
+            },
+            responsive: true
         }
     });
 
@@ -80,8 +181,28 @@ document.addEventListener('DOMContentLoaded', function () {
             datasets: [{
                 label: '',
                 data: oeeData.map(item => item.qualityRate * 100),
-                backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0']
+                backgroundColor: ['#377195', '#36a2eb', '#ffce56', '#4bc0c0'],
+                borderColor: 'transparent', // Set to 'transparent' to remove borders
+                borderWidth: 0 // Set to 0 to remove borders
             }]
+        },
+        options: {
+            cutout: '0%', // Remove or set to desired cutout size
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#ffffff' // Text color for legend labels
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        labelTextColor: function() {
+                            return '#ffffff'; // Text color for tooltip labels
+                        }
+                    }
+                }
+            },
+            responsive: true
         }
     });
 
@@ -94,8 +215,28 @@ document.addEventListener('DOMContentLoaded', function () {
             datasets: [{
                 label: '',
                 data: oeeData.map(item => item.availabilityRate * 100),
-                backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0']
+                backgroundColor: ['#377195', '#36a2eb', '#ffce56', '#4bc0c0'],
+                borderColor: 'transparent', // Set to 'transparent' to remove borders
+                borderWidth: 0 // Set to 0 to remove borders
             }]
+        },
+        options: {
+            cutout: '0%', // Remove or set to desired cutout size
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#ffffff' // Text color for legend labels
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        labelTextColor: function() {
+                            return '#ffffff'; // Text color for tooltip labels
+                        }
+                    }
+                }
+            },
+            responsive: true
         }
     });
 });
@@ -116,11 +257,13 @@ var productionComparisonChart = new Chart(ctxProductionComparison, {
         datasets: [
             {
                 label: 'HAT-1',
+                color: '#ffffff',
                 data: hat1Data,
                 backgroundColor: '#36a2eb'
             },
             {
                 label: 'HAT-2',
+                color: '#ffffff',
                 data: hat2Data,
                 backgroundColor: '#ff6384'
             }
@@ -151,7 +294,7 @@ var productionComparisonChart = new Chart(ctxProductionComparison, {
 
     background.append('path')
         .datum({ endAngle: Math.PI })
-        .style('fill', '#ddd')
+        .style('fill', '#499ff1')
         .attr('d', arc);
 
     var foreground = svg.append('g')
@@ -164,11 +307,11 @@ var productionComparisonChart = new Chart(ctxProductionComparison, {
 
     foreground.append('path')
         .datum({ endAngle: -Math.PI / 2 })
-        .style('fill', '#ff6384')
+        .style('fill', '#499ff1')
         .attr('d', valueArc);
 
     // Set gauge value (example: 0.75 for 75%)
-    var value = 0.75;
+    var value = 0.64;
     foreground.select('path')
         .transition()
         .duration(1000)
@@ -186,5 +329,6 @@ var productionComparisonChart = new Chart(ctxProductionComparison, {
         .attr('text-anchor', 'middle')
         .attr('font-size', '24px')
         .attr('fill', '#333')
+        .style('fill', '#499ff1')
         .text((value * 100).toFixed(0) + '%');
 
