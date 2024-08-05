@@ -5,6 +5,8 @@ Dashboard
 ![github_dash-project_3](https://github.com/user-attachments/assets/77fce2af-7aa8-4362-8289-0df849dea148)
 ![github_dash-project_4](https://github.com/user-attachments/assets/e0caed6f-c04b-44cc-b260-de76f7030a01)
 ![github_dash-project_5](https://github.com/user-attachments/assets/c3cca5b8-1803-4b58-88a0-b1b5ff252498)
+Gauge chart update:
+![image](https://github.com/user-attachments/assets/15ac0917-fc36-4150-80bb-384e8f946e33)
 1.0
 ![Dashboard1](https://github.com/user-attachments/assets/0c96053c-08a3-411a-8973-f641c1ebc0bd)
 ![Dashboard2](https://github.com/user-attachments/assets/057146bb-0ef8-466c-b905-fd24408f8efd)
