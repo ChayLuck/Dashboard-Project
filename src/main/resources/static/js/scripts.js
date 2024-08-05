@@ -284,8 +284,8 @@ var productionComparisonChart = new Chart(ctxProductionComparison, {
         radius = Math.min(width, height) / 2;
 
     var arc = d3.arc()
-        .innerRadius(radius - 20)
-        .outerRadius(radius - 10)
+        .innerRadius(radius - 100)
+        .outerRadius(radius - 50)
         .startAngle(-Math.PI / 2)
         .endAngle(Math.PI / 2);
 
@@ -301,8 +301,8 @@ var productionComparisonChart = new Chart(ctxProductionComparison, {
         .attr('transform', `translate(${width / 2},${height / 2})`);
 
     var valueArc = d3.arc()
-        .innerRadius(radius - 20)
-        .outerRadius(radius - 10)
+        .innerRadius(radius - 100)
+        .outerRadius(radius - 50)
         .startAngle(-Math.PI / 2);
 
     foreground.append('path')
@@ -311,13 +311,13 @@ var productionComparisonChart = new Chart(ctxProductionComparison, {
         .attr('d', valueArc);
 
     // Set gauge value (example: 0.75 for 75%)
-    var value = 0.64;
+    var value = 0.84;
     foreground.select('path')
         .transition()
         .duration(1000)
         .attr('d', d3.arc()
-            .innerRadius(radius - 20)
-            .outerRadius(radius - 10)
+            .innerRadius(radius - 100)
+            .outerRadius(radius - 50)
             .startAngle(-Math.PI / 2)
             .endAngle(-Math.PI / 2 + (Math.PI * 2 * value))
         );
